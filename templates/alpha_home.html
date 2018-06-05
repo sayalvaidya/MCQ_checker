@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%;background-image:url("../static/images/bg.jpg"); background-size: 100%'>
+        <form method='post' action="{{ url_for('upload_answer') }}" enctype='multipart/form-data'>
+        <div>
+            <h1 style="margin-left: 30%">Alphabet Type MCQ Answer Evaluation</h1>
+
+                <div class="form-group" style="float: left;margin-left: 40%; margin-top: 12%;display: inline">
+                    <label for="inputTemplate" style=" font-size: 20px;">Enter the Correct Answers </label><br>
+                    <button style="margin-left: 30%">Update</button><br>
+                    <label for="display" style=" font-size: 20px;">View the correct answers </label><br>
+                    <button style="margin-left: 30%">View</button>
+
+                </div>
+                <div class="form-group" style="float: left;margin-left: 30%; margin-top: 2%;display: inline">
+                 <label for="inputAnswer" style=" font-size: 20px">Choose the Answer Sheet here:</label>
+                   <input type="file" class="form-control" id="inputAnswer" name="inputAnswer">
+                </div>
+                <div style="float: right; margin-right: 45%; margin-top: 3%; display: inline">
+                    <button type="submit" class="btn btn-success"style="background-color: dodgerblue;height: 50px; width: 150px">Evaluate</button>
+
+                </div>
+        </form>}
+
+        </div>
+    </div>
+
+</body>
+</html>

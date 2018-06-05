@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>MCQ Answer Checker</title>
+    <script>
+    function mouseOver() {
+     g.style.height = "260px";
+
+    }
+    function normalImg(g) {
+    g.style.height = "250px";
+
+    }
+     function mouseOver1() {
+     al.style.height = "260px";
+
+    }
+    function normalImg1(g) {
+    al.style.height = "250px";
+
+    }
+</script>
+</head>
+<body>
+
+
+    <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%;background-image:url("../static/images/background.jpg"); background-size: 100%'>
+        <h1 style="font-size: 60px;color: black; margin-left: 30%">MCQ Answer Checker</h1>
+
+        <h2 style="margin-top: 5%; margin-left: 40%">Choose The Answer Type</h2>
+		<a href="grid"><img onmouseover="mouseOver() "onmouseout="normalImg(this)" src="{{ url_for('static',filename='images/grid.gif') }}" id="g" style="height:250px; margin-top: 5%; margin-left: 30%;float: left;display: inline "></a>
+        <a href="alpha"><img onmouseover="mouseOver1() "onmouseout="normalImg1(this)" src="{{ url_for('static',filename='images/alpha.gif') }}" id="al" style="height:250px; margin-top: 5%; margin-right: 30%;float: right; "></a>
+
+
+    </div>
+
+</body>
+</html>
