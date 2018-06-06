@@ -1,4 +1,5 @@
 import os
+import cgi
 from flask import Flask
 from flask import render_template
 from os.path import join, dirname, realpath
@@ -46,6 +47,15 @@ def upload_answer():
     grid_check(file.filename)
     return render_template('gridResult.html', img=file.filename, out=filename)
 
+@app.route('/Store_answer',methods=['POST'])
+def store_answer():
+    num= request.form.get('number')
+    n=int(num)
+    for i in range(n):
+        a=i+1
+        ans= request.form.get('answer',a)
+        print ans
+    return render_template('index.html')
 
 def allowed_file(filename):
     return '.' in filename and \
