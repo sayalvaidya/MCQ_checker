@@ -52,9 +52,9 @@ def store_answer():
     num= request.form.get('number')
     n=int(num)
     for i in range(n):
-        a=i+1
-        ans= request.form.get('answer',a)
-        print ans
+        ans = 'answer'+str(i+1)
+        answer= request.form.get(ans)
+        print answer
     return render_template('index.html')
 
 def allowed_file(filename):
