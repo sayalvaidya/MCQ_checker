@@ -5,7 +5,7 @@ from flask import render_template
 from os.path import join, dirname, realpath
 from flask import request
 from werkzeug.utils import secure_filename
-from Grid_Evaluation import grid_check
+from Grid_Evaluation import grid_check, answer_dict
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
@@ -50,12 +50,19 @@ def upload_answer():
 @app.route('/Store_answer',methods=['POST'])
 def store_answer():
     num= request.form.get('number')
-    n=int(num)
-    for i in range(n):
+    num=int(num)
+    ans = 'answer1'
+    answer = request.form.get(ans)
+    answer=int(answer)
+    ans_set={}
+    for i in range(num):
         ans = 'answer'+str(i+1)
         answer= request.form.get(ans)
-        print answer
-    return render_template('index.html')
+        answer = int(answer)
+        ans_set[i]=answer
+    # print ans_set
+    answer_dict(ans_set)
+    return render_template('grid_home.html')
 
 def allowed_file(filename):
     return '.' in filename and \

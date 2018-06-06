@@ -1,4 +1,0 @@
-import cgi
-
-
-print(number)
