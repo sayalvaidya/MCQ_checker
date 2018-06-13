@@ -140,6 +140,6 @@ def grid_check(filename):
                 cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
 
 
-
+    filename= str(score)+filename
     cv2.imwrite(RESULT + filename, paper)
     cv2.waitKey(0)
