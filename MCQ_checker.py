@@ -74,4 +74,5 @@ if __name__ == '__main__':
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     app.config['TEMPLATE'] = TEMPLATE
     app.config['RESULT'] = RESULT
+    app.debug = True
     app.run()
