@@ -83,13 +83,13 @@ class NeuralNetwork:
 
 inputNodes = 1024
 hiddenNodes = 300
-outputNodes = 14
-learningRate = 0.2
+outputNodes = 15
+learningRate = 0.08
 
 neural = NeuralNetwork(inputNodes, hiddenNodes, outputNodes, learningRate)
 
 # load the mnist train data CSV file
-training_data = open(UPLOAD_FOLDER_DATA_TO_TRAIN + "train.csv", 'r')
+training_data = open(UPLOAD_FOLDER_DATA_TO_TRAIN + "train2.csv", 'r')
 training_list = training_data.readlines()
 training_data.close()
 
@@ -100,6 +100,7 @@ for record in training_list:
 
     # target labels. all values are 0.01 except the correct label which has a value of 0.99
     targets = numpy.zeros(outputNodes) + 0.01
+
     targets[int(all_values[0])] = 0.99
 
     # begin the training
@@ -109,7 +110,7 @@ for record in training_list:
 neural.save_weights()
 
 # load the mnist test data CSV file
-test_data = open(UPLOAD_FOLDER_DATA_TO_TRAIN + "test.csv", 'r')
+test_data = open(UPLOAD_FOLDER_DATA_TO_TRAIN + "test2.csv", 'r')
 test_list = test_data.readlines()
 test_data.close()
 

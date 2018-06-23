@@ -18,8 +18,16 @@
      al.style.height = "260px";
 
     }
-    function normalImg1(g) {
+    function normalImg1(al) {
     al.style.height = "250px";
+
+    }
+       function mouseOver2() {
+     lg.style.height = "260px";
+
+    }
+    function normalImg2(lg) {
+    lg.style.height = "250px";
 
     }
 </script>
@@ -31,8 +39,22 @@
         <h1 style="font-size: 60px;color: black; margin-left: 30%">MCQ Answer Checker</h1>
 
         <h2 style="margin-top: 5%; margin-left: 40%">Choose The Answer Type</h2>
-		<a href="grid"><img onmouseover="mouseOver() "onmouseout="normalImg(this)" src="{{ url_for('static',filename='images/grid.gif') }}" id="g" style="height:250px; margin-top: 5%; margin-left: 30%;float: left;display: inline "></a>
-        <a href="alpha"><img onmouseover="mouseOver1() "onmouseout="normalImg1(this)" src="{{ url_for('static',filename='images/alpha.gif') }}" id="al" style="height:250px; margin-top: 5%; margin-right: 30%;float: right; "></a>
+        <div style="margin-left: 20%;float: left;display: inline">
+            <a href="grid"><img onmouseover="mouseOver() "onmouseout="normalImg(this)" src="{{ url_for('static',filename='images/grid.gif') }}" id="g" style="height:250px; margin-top: 5%; margin-left: 20%;float: left;display: inline"></a>
+
+        </div>
+        <div style="margin-right: 20%;float: right;display: inline">
+            <a href="alpha"><img onmouseover="mouseOver1() "onmouseout="normalImg1(this)" src="{{ url_for('static',filename='images/alpha.gif') }}" id="al" style="height:250px; margin-top: 5%"></a>
+
+        </div>
+        <div style="float: right;display: inline">
+            <a href="longGrid"><img onmouseover="mouseOver2() "onmouseout="normalImg2(this)" src="{{ url_for('static',filename='images/longGrid.gif') }}" id="lg" style="height:250px; margin-top: 5%; margin-right: 40%;float: right;display: inline-flex "></a>
+
+        </div>
+
+{#		<a href="grid"><img onmouseover="mouseOver() "onmouseout="normalImg(this)" src="{{ url_for('static',filename='images/grid.gif') }}" id="g" style="height:250px; margin-top: 5%; margin-left: 20%;float: left;display: inline"></a>#}
+{#        <a href="alpha"><img onmouseover="mouseOver1() "onmouseout="normalImg1(this)" src="{{ url_for('static',filename='images/alpha.gif') }}" id="al" style="height:250px; margin-top: 5%; margin-right: 15%;float: right;display: inline-flex"></a>#}
+{#        <a href="longGrid"><img onmouseover="mouseOver2() "onmouseout="normalImg2(this)" src="{{ url_for('static',filename='images/longGrid.gif') }}" id="lg" style="height:250px; margin-top: 5%; margin-right: 40%;float: right;display: inline-flex "></a>#}
 
 
     </div>

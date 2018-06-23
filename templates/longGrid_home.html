@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Long Grid</title>
+</head>
+<body>
+  <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%;background-image:url("../static/images/bg.jpg"); background-size: 100%'>
+    <div style=" margin-right: 45%; margin-top: 1%; display: inline">
+         <div>
+                <h1 style="margin-left: 30%">Long Grid Type MCQ Answer Evaluation</h1>
+
+
+         </div>
+    <form method ='post'action="{{ url_for('longGrid_template') }}" enctype='multipart/form-data' >
+        <div class="form-group" style="float: left;margin-left: 30%; margin-top: 10%;display: inline">
+            <label for="template">Enter the template image:</label>
+            <input type="file" class="form-control" id="template" name="template">
+            <button type="submit" class="btn btn-success"style="background-color: dodgerblue;height: 50px; width: 150px">Save</button>
+
+{#        <a href="gridAnswer"><button style="background-color: dodgerblue;height: 50px; width: 150px">Add Answers</button></a>#}
+        </div>
+
+    </form>
+
+   <form method='post' action="{{ url_for('longGrid_result') }}" enctype='multipart/form-data'>
+
+                <div class="form-group" style="float: left;margin-left: 30%; margin-top: 5%;display: inline">
+                 <label for="answer" style=" font-size: 20px">Choose the Answer Sheet's image here:</label>
+                   <input type="file" class="form-control" id="answer" name="answer">
+                </div>
+
+                <div style="float: right; margin-right: 45%; margin-top: 5%; display: inline">
+                    <button type="submit" class="btn btn-success"style="background-color: dodgerblue;height: 50px; width: 150px">Evaluate</button>
+
+                </div>
+
+
+
+   </form>
+
+
+
+    </div>
+    </div>
+
+</body>
+</html>

@@ -5,28 +5,43 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+			function showTable(obj){
+			var num=parseInt(obj.value);
+			document.write("<form method = \"POST\" action=\"{{ url_for('store_answer2') }}\">" +
+                "<input type='hidden' name=\"number\" value=\""+num+"\" /> ");
+			for (var i = 0; i <num; i++) {
+                var n=i+1;
+				document.write("Q_no. <input id=\"qes\"type=\"text\" value="+n+"><br>");
+				document.write("Answer<input type=\"text\" name=\"answer"+n+"\"><br><br>");
+			}
+			document.write("<br><input type=\"submit\" value=\"Submit\"></form>");
+            }
+		</script>
+
 
     <div style='position:absolute;z-index:0;left:0;top:0;width:100%;height:100%;background-image:url("../static/images/bg.jpg"); background-size: 100%'>
-        <form method='post' action="{{ url_for('upload_answer') }}" enctype='multipart/form-data'>
         <div>
             <h1 style="margin-left: 30%">Alphabet Type MCQ Answer Evaluation</h1>
 
-                <div class="form-group" style="float: left;margin-left: 40%; margin-top: 12%;display: inline">
-                    <label for="inputTemplate" style=" font-size: 20px;">Enter the Correct Answers </label><br>
-                    <button style="margin-left: 30%">Update</button><br>
-                    <label for="display" style=" font-size: 20px;">View the correct answers </label><br>
-                    <button style="margin-left: 30%">View</button>
+            <form method ='post'action="{{ url_for('upload_answer')}}" enctype='multipart/form-data' >
+            <div class="form-group" style="float: left;margin-left: 30%; margin-top: 10%;display: inline">
+            <label for="Total_ques">Enter the total no of Questions:</label>
+            <input type="number" id="Total_ques" name="Total_qes">
+             <input type="button" value="Add Answers" onClick="showTable(document.getElementById('Total_ques'));"/>
+             </div>
 
-                </div>
+            </form>
+            <form method='post' action="{{ url_for('alpha_upload') }}" enctype='multipart/form-data'>
                 <div class="form-group" style="float: left;margin-left: 30%; margin-top: 2%;display: inline">
-                 <label for="inputAnswer" style=" font-size: 20px">Choose the Answer Sheet here:</label>
-                   <input type="file" class="form-control" id="inputAnswer" name="inputAnswer">
+                 <label for="alphaAnswer" style=" font-size: 20px">Choose the Answer Sheet here:</label>
+                 <input type="file" class="form-control" id="alphaAnswer" name="alphaAnswer">
                 </div>
                 <div style="float: right; margin-right: 45%; margin-top: 3%; display: inline">
-                    <button type="submit" class="btn btn-success"style="background-color: dodgerblue;height: 50px; width: 150px">Evaluate</button>
+                    <button type ="submit" class="btn btn-success"style="background-color: dodgerblue;height: 50px; width: 150px">Evaluate</button>
 
                 </div>
-        </form>}
+            </form>
 
         </div>
     </div>

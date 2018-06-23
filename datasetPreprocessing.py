@@ -4,8 +4,8 @@ import os
 import imutils
 
 if __name__ == "__main__":
-    for filename in os.listdir('./dataset/45'):
-        img = cv2.imread('./dataset/45/'+filename)
+    for filename in os.listdir('./static/dataset'):
+        img = cv2.imread('./static/dataset'+filename)
         img = 255 - img
         gray_scale_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         ret, mask = cv2.threshold(gray_scale_img, 180, 255, cv2.THRESH_BINARY)
@@ -39,6 +39,6 @@ if __name__ == "__main__":
             # crop each contour and save individually
             cropped_img = final_img[y:y + h, x:x + w]
         final_img = cv2.resize(cropped_img, (32, 32))
-        cv2.imwrite('./finalDataSet/45/'+filename, final_img)
+        cv2.imwrite('./static/dataset/'+filename, final_img)
 
 

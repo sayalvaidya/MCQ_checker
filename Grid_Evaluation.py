@@ -20,8 +20,8 @@ def grid_check(filename):
     global ANSWER_KEY
     print ANSWER_KEY
     image = cv2.imread(FIND_FOLDER + filename)
-    # image = cv2.resize(image, None, fx=0.5, fy=0.5, interpolation=cv2.INTER_CUBIC)
-
+    image = cv2.resize(image, None, fx=0.1, fy=0.1, interpolation=cv2.INTER_CUBIC)
+    # image = cv2.resize(image,(512,512))
     # ANSWER_KEY = {0: 1, 1: 4, 2: 0, 3: 3, 4: 1}
 
     # load the image, convert it to grayscale, blur it
@@ -136,10 +136,10 @@ def grid_check(filename):
     # grab the test taker
     score = (correct / 5.0) * 100
     print("[INFO] score: {:.2f}%".format(score))
-    cv2.putText(paper, "{:.2f}%".format(score), (10, 30),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
+    cv2.putText(paper, "Correct:"+str(correct), (90, 30),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 0, 0), 2)
 
 
-    filename= str(score)+filename
+    # filename= str(score)+filename
     cv2.imwrite(RESULT + filename, paper)
     cv2.waitKey(0)
